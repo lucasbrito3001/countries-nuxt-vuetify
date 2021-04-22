@@ -1,0 +1,15 @@
+@mixin breakpoint($screenWidth) {
+    @if $screenWidth == mediumOnly {
+        @media(max-width:992px){ 
+            @content;
+        }
+    }
+
+    @else if $screenWidth == smallOnly {
+        @media(max-width: 768px){
+            @content;
+        }
+    }
+}
+
+$purple-default: #6d2080;
