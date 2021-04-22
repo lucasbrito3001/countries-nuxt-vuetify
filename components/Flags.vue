@@ -8,7 +8,7 @@
           sm6
           xs12>
               <NuxtLink :to="{name: 'country-SelectedCountry' , params: { SelectedCountry: flag.name }}">
-                <v-card tile class="ma-2" height="220">
+                <v-card tile class="ma-2">
                     <v-img id="flag_img" :src="flag.src_flag" transition="scroll-y-transition"/>
                 </v-card>
               </NuxtLink>
