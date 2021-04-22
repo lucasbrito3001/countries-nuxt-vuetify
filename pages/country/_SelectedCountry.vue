@@ -9,7 +9,7 @@
         <ul>
           <li>Nome: {{selected_country.name}}</li>
           <li>Capital: {{selected_country.capital}}</li>
-          <li>Região: <NuxtLink to="/">{{selected_country.region}}</NuxtLink></li>
+          <li>Região: {{selected_country.region}}</li>
           <li>Sub-região: {{selected_country.subregion}}</li>
           <li>População: {{selected_country.population}} </li>
           <li>Línguas:

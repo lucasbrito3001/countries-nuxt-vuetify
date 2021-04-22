@@ -14,13 +14,6 @@
               </NuxtLink>
           </v-flex>
       </v-layout>
-      <v-pagination
-        class="mt-10"
-        v-model="page"
-        :length="4"
-        prev-icon="mdi-menu-left"
-        next-icon="mdi-menu-right"
-      />
   </div>
 </template>
 
@@ -29,11 +22,6 @@ export default {
   props: {
     array_filtered_flags_props: {
       type: Array
-    }
-  },
-  data () {
-    return {
-      page: 1
     }
   }
 }
