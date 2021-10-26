@@ -30,6 +30,7 @@
 
 <script>
 import Borders from '../../components/Borders'
+import Constants from '../../constants'
 export default {
   components: { Borders },
   data () {
@@ -38,13 +39,14 @@ export default {
     }
   },
   mounted () {
-    this.teste()
+    this.getCountry()
   },
   methods: {
-    async teste () {
+    async getCountry () {
       try {
-        const res = await this.$axios.$get(`https://restcountries.eu/rest/v2/alpha/${this.$route.params.SelectedCountry}`)
+        const res = await this.$axios.$get(`${Constants.API_URL}/alpha/${this.$route.params.SelectedCountry}`)
         this.selected_country = res
+        console.log(res)
       } catch (error) {
         console.log(error)
       }

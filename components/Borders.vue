@@ -9,7 +9,7 @@
     class="px-3">
       <NuxtLink :to="{ name: 'country-SelectedCountry' , params: { SelectedCountry: border.toLowerCase() }}">
         <v-card tile class="mb-5">
-          <v-img :src="'https://restcountries.eu/data/' + border.toLowerCase() + '.svg'"/>
+          <v-img :src="'https://flagcdn.com/' + border.slice(0, 2).toLowerCase() + '.svg'"/>
         </v-card>
       </NuxtLink>
     </v-flex>
@@ -20,7 +20,8 @@
 export default {
   props: {
     array_borders_props: {
-      type: Array
+      type: Array,
+      default: () => ([])
     }
   }
 }
