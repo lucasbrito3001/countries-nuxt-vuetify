@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import Constants from '../constants'
 export default {
   props: {
     array_first_filter_props: {
@@ -58,7 +59,7 @@ export default {
   },
   async mounted () {
     try {
-      const res = await this.$axios.$get('https://restcountries.eu/rest/v2/all?fields=region;languages;capital;callingCodes;name')
+      const res = await this.$axios.$get(Constants.API_URL + '/all?fields=region,languages,capital,callingCodes,name')
       this.prepareSelects(res)
     } catch (error) {
       console.error(error)
@@ -126,7 +127,7 @@ export default {
       }
     },
     async sendRequestGET () {
-      const res = await this.$axios.$get(`https://restcountries.eu/rest/v2/${this.first_filter_selected.value}/${this.second_filter_selected.value}`)
+      const res = await this.$axios.$get(`${Constants.API_URL}/${this.first_filter_selected.value}/${this.second_filter_selected.value}`)
       const filteredFlags = []
       res.forEach(element => filteredFlags.push({
         name: element.alpha3Code.toLowerCase(),
